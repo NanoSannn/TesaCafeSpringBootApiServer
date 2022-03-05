@@ -21,6 +21,7 @@ public class Drink {
     private String name;
     private String drinkTy;
     private Integer drinkPrice;
+    private Number Price;
     private String img;
 
     @CreatedDate
