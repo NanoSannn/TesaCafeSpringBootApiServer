@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import nvc.it.web_tesa_cafe.model.Drink;
-import nvc.it.web_tesa_cafe.model.DrinkType;
 import nvc.it.web_tesa_cafe.repository.DrinkRepository;
 
 @Service
@@ -34,14 +33,6 @@ public class DrinkService {
     public Optional<Drink> updateDrink(String id, Drink drink){
         Drink currentDrink = drinkRepository.findById(id).get();
         currentDrink.setName(drink.getName());
-        return Optional.of(drinkRepository.save(currentDrink));
-    }
-
-    public Optional<Drink> addDrinkType(String id, DrinkType drinkType){
-        Drink currentDrink = drinkRepository.findById(id).get();
-        List<DrinkType> drinkTypes = currentDrink.getDrinkTypes();
-        drinkTypes.add(drinkType);
-        currentDrink.setDrinkTypes(drinkTypes);
         return Optional.of(drinkRepository.save(currentDrink));
     }
 

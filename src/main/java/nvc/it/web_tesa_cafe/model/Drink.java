@@ -19,8 +19,9 @@ public class Drink {
     @Id
     private String _id;
     private String name;
-
-    private List<DrinkType> drinkTypes = new ArrayList<DrinkType>();
+    private String drinkTy;
+    private Integer drinkPrice;
+    private String img;
 
     @CreatedDate
     private Date createdAt;

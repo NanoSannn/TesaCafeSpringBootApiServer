@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import nvc.it.web_tesa_cafe.model.Drink;
-import nvc.it.web_tesa_cafe.model.DrinkType;
 import nvc.it.web_tesa_cafe.service.DrinkService;
 
 @RestController
@@ -64,14 +63,6 @@ public class DrinkController {
         HashMap<String, Object> map = new HashMap<>();
         map.put("msg", "Update Product Succes!");
         map.put("data", drinkService.updateDrink(id, drink));
-        return new ResponseEntity<Object>(map, HttpStatus.OK);
-    }
-
-    @PatchMapping("/{id}")
-    public ResponseEntity<Object> addDrinkType(@PathVariable String id, @RequestBody DrinkType drinkType){
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("msg", "Update Review Succes!");
-        map.put("data", drinkService.addDrinkType(id, drinkType));
         return new ResponseEntity<Object>(map, HttpStatus.OK);
     }
 
